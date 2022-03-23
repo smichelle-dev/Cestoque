@@ -1,24 +1,25 @@
-﻿@{
+﻿@model EstoqueModel;
+@{
     ViewData["Title"] = "Cadastrar produtos";
 }
 
-<form>
+<form asp-controller="Estoque" asp-action="CadastrarProduto" method="post">
 
     <div class="form-group">
         <label for="NomeProduto">Nome:</label>
-        <input type="text" class="form-control" placeholder="Digite o nome do produto">
+        <input type="text" asp-for="NomeProduto" class="form-control" placeholder="Digite o nome do produto">
     </div>
     <div class="form-group">
         <label for="QtdProduto">Quantidade: </label>
-        <input type="text" class="form-control" placeholder="Digite a quantidade do produto">
+        <input type="text"asp-for="Quantidade" class="form-control" placeholder="Digite a quantidade do produto">
     </div>
     <div class="form-group">
         <label for="ValorUnidadeProduto">Valor por unidade:</label>
-        <input type="text" class="form-control" placeholder="Digite o valor da unidade do produto">
+        <input type="text" asp-for="ValorUnidade" class="form-control" placeholder="Digite o valor da unidade do produto">
     </div>
     <div class="form-group">
         <label for="ValorTotal">Valor total:</label>
-        <input class="form-control" id="disabledInput" type="text" placeholder="Esse valor é gerado automaticamente pelo sistema!" disabled>
+        <input class="form-control" id="disabledInput" type="text" asp-for="ValorTotal" placeholder="Esse valor é gerado automaticamente pelo sistema!" disabled>
     </div>
     <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
     <a class="btn btn-secondary btn-block" asp-controller="Estoque" asp-action="Index" role="button">Voltar</a>
