@@ -30,7 +30,7 @@
                         <td>@produto.NomeProduto</td>
                         <td>@produto.Quantidade</td>
                         <td>@produto.ValorUnidade</td>
-                        <td>@produto.ValorUnidade*@produto.Quantidade</td>
+                        <td>@produto.ValorTotal</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a role="button" class="btn btn-primary" asp-route-id="@produto.Id" asp-controller="Estoque" asp-action="EditarProduto">Editar</a>

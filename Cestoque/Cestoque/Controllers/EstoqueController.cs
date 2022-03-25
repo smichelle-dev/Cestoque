@@ -27,23 +27,43 @@ namespace Cestoque.Controllers
             return View();
         }
 
-        public IActionResult EditarProduto()
+        public IActionResult EditarProduto(int id)
         {
-            return View();
+            EstoqueModel produto = _estoqueRepositorio.ListarPorId(id);
+            return View(produto);
         }
 
-        public IActionResult ApagarProduto()
+        public IActionResult ApagarProduto(int id)
         {
-            return View();
+            EstoqueModel produto = _estoqueRepositorio.ListarPorId(id); //mensagem de confirmacao pra apagar o produto
+            return View(produto);
         }
-        
+
+
+        public IActionResult DeletarProduto(int id) // deleta do bd
+
+        {
+            _estoqueRepositorio.DeletarProduto(id);
+            return RedirectToAction("Index");
+        }
+
+
         [HttpPost]
         public IActionResult CadastrarProduto(EstoqueModel estoque)
         {
             _estoqueRepositorio.Adicionar(estoque);
             return RedirectToAction("Index");
         }
-        
+
+        [HttpPost]
+        public IActionResult AlterarProduto(EstoqueModel estoque)
+        {
+            _estoqueRepositorio.Atualizar(estoque);
+            return RedirectToAction("Index");
+        }
+
+
+
 
     }
 }
