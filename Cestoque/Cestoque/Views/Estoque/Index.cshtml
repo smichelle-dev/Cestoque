@@ -1,13 +1,25 @@
-﻿@{
+﻿@model List<EstoqueModel>
+@{
     ViewData["Title"] = "Listagem de estoque";
 }
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+        This is a primary alert—check it out!
+    </div>
+}
+<div class="alert alert-danger" role="alert">
+    <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+    @TempData["MensagemSucesso"]
+</div>
 
 <div class="text-center">
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <a class="btn btn-primary" role="button" asp-controller="Estoque" asp-action="CadastrarProduto">Adicionar produto</a>
     </div>
     </br>
-    
+
     <table class="table">
         <thead>
             <tr>
@@ -20,49 +32,27 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Arroz</td>
-                <td>20</td>
-                <td>17,50</td>
-                <td>350,00</td>
-                <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a role="button" class="btn btn-primary" asp-controller="Estoque" asp-action="EditarProduto">Editar</a>
-                        <a role="button" class="btn btn-danger"asp-controller="Estoque" asp-action="ApagarProduto">Apagar</a>
-                    </div>
-                </td>
+            @if (Model != null && Model.Any())
+            {
+                foreach (EstoqueModel estoque in Model)
+                {
+                    <tr>
+                        <th scope="row">@estoque.Id</th>
+                        <td>@estoque.Nome</td>
+                        <td>@estoque.Quantidade</td>
+                        <td>R$ @estoque.ValorPorUnidade</td>
+                        <td>R$ @estoque.ValorTotal</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a role="button" class="btn btn-primary" asp-route-id="@estoque.Id" asp-controller="Estoque" asp-action="EditarProduto">Editar</a>
+                                <a role="button" class="btn btn-danger" asp-route-id="@estoque.Id" asp-controller="Estoque" asp-action="ApagarProdutoConfirmacao">Apagar</a>
+                            </div>
+                        </td>
 
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Feijão</td>
-                <td>7</td>
-                <td>7,50</td>
-                <td>52,50</td>
-                <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a role="button" class="btn btn-primary" asp-controller="Estoque" asp-action="EditarProduto">Editar</a>
-                        <a role="button" class="btn btn-danger" asp-controller="Estoque" asp-action="ApagarProduto">Apagar</a>
+                    </tr>
+                }
+            }
 
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Açucar</td>
-                <td>15</td>
-                <td>15,50</td>
-                <td>232,50</td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <a role="button" class="btn btn-primary" asp-controller="Estoque" asp-action="EditarProduto">Editar</a>
-                        <a role="button" class="btn btn-danger" asp-controller="Estoque" asp-action="ApagarProduto">Apagar</a>
-
-                    </div>
-                </td>
-
-            </tr>
         </tbody>
     </table>
 </div>
