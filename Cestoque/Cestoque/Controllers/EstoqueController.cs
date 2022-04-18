@@ -41,9 +41,27 @@ namespace Cestoque.Controllers
         public IActionResult ApagarProduto(int id) 
         {
             //apaga do bd
-            _estoqueRepositorio.Apagar(id);
+            try
+            {
+                bool apagado = _estoqueRepositorio.Apagar(id);
+                if (apagado)
+                {
+                    TempData["MensagemSucesso"] = "Produto apagado com sucesso!";
+                }
+                else
+                {
+                    TempData["MensagemErro"] = "Ops!... Não conseguimos apagar o seu produto.Tente novamente.";
+                }
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops!... Não conseguimos apagar o seu produto.Detalhe do erro:{erro.Message}";
+                return RedirectToAction("Index");
+            }
+           
+           
         }
 
 
@@ -72,12 +90,24 @@ namespace Cestoque.Controllers
         [HttpPost]
         public IActionResult AlterarProduto(EstoqueModel estoque)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _estoqueRepositorio.Atualizar(estoque);
+                if (ModelState.IsValid)
+                {
+                    _estoqueRepositorio.Atualizar(estoque);
+                    TempData["MensagemSucesso"] = "Produto alterado com sucesso!";
+                    return RedirectToAction("Index");
+                }
+
+                return View("EditarProduto", estoque);
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Não conseguimos alterar o seu produto.Tente novamente. Detalhe do erro:{erro.Message}";
                 return RedirectToAction("Index");
             }
-            return View("EditarProduto",estoque);
+
+
         }
 
     }

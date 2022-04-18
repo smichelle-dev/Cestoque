@@ -2,18 +2,24 @@
 @{
     ViewData["Title"] = "Listagem de estoque";
 }
+
 @if (TempData["MensagemSucesso"] != null)
 {
     <div class="alert alert-primary" role="alert">
         <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
-        This is a primary alert—check it out!
+        @TempData["MensagemSucesso"]
     </div>
 }
-<div class="alert alert-danger" role="alert">
-    <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
-    @TempData["MensagemSucesso"]
-</div>
 
+@if (TempData["MensagemErro"] != null)
+{ 
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-primary btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<br />
 <div class="text-center">
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <a class="btn btn-primary" role="button" asp-controller="Estoque" asp-action="CadastrarProduto">Adicionar produto</a>
