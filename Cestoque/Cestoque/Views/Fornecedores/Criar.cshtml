@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Cadastrar fornecedores";
+}
+
+
+<form asp-controller="" asp-action="" method="post">
+
+    <div class="form-group">
+        <label for="NomeFornecedor">Fornecedor</label>
+        <input type="text" class="form-control" placeholder="Digite o nome do fornecedor!">
+
+    </div>
+    <div class="form-group">
+        <label for="NomeProduto">Produto</label>
+        <input type="text" class="form-control" placeholder="Digite o nome do produto!">
+
+    </div>
+    <div class="form-group">
+        <label for="ValorUnd">Valor</label>
+        <input type="text" class="form-control" placeholder="Digite o valor da unidade do produto!">
+
+    </div>
+    <div class="form-group">
+        <label for="Data">Data</label>
+        <input type="date" class="form-control" placeholder="Digite a data da verificação!">
+
+    </div>
+    <div class="form-group">
+        <label for="Mes">Mês</label>
+        <input type="text" class="form-control" placeholder="Digite o mês de verificação!">
+
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Adicionar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="Fornecedores" asp-action="Index" role="button">Voltar</a>
+</form>
