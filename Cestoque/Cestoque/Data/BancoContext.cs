@@ -17,5 +17,8 @@ namespace Cestoque.Data
         //aqui vou colocar mais tabelas
 
         public DbSet<EstoqueModel> Estoque { get; set; }
+        public DbSet<FornecedoresModel> Fornecedores { get; set; }
+
+
     }
 }
