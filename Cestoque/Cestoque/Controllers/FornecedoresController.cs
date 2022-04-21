@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Cestoque.Models;
+using Cestoque.Repositorio;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,22 +11,45 @@ namespace Cestoque.Controllers
 {
     public class FornecedoresController : Controller
     {
+        private readonly IFornecedoresRepositorio _fornecedoresRepositorio;
+        public FornecedoresController(IFornecedoresRepositorio fornecedoresRepositorio)
+        {
+            _fornecedoresRepositorio = fornecedoresRepositorio;
+        }
         public IActionResult Index()
         {
-            return View();
+           List<FornecedoresModel> fornecedores =_fornecedoresRepositorio.Buscar();
+            return View(fornecedores);
         }
 
         public IActionResult Criar()
         {
             return View();
         }
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
+            FornecedoresModel fornecedor =_fornecedoresRepositorio.ListarPorId(id);
+            return View(fornecedor);
         }
         public IActionResult ApagarConfirmacao()
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Criar(FornecedoresModel fornecedores)
+        {
+
+            _fornecedoresRepositorio.Adicionar(fornecedores);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Alterar(FornecedoresModel fornecedores)
+        {
+
+            _fornecedoresRepositorio.Atualizar(fornecedores);
+            return RedirectToAction("Index");
+        }
     }
+
 }

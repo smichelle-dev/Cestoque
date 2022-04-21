@@ -1,33 +1,34 @@
-﻿@{
+﻿@model FornecedoresModel
+@{
     ViewData["Title"] = "Cadastrar fornecedores";
 }
 
 
-<form asp-controller="" asp-action="" method="post">
+<form asp-controller="Fornecedores" asp-action="Criar" method="post">
 
     <div class="form-group">
         <label for="NomeFornecedor">Fornecedor</label>
-        <input type="text" class="form-control" placeholder="Digite o nome do fornecedor!">
+        <input type="text" asp-for="Fornecedor" class="form-control" placeholder="Digite o nome do fornecedor!">
 
     </div>
     <div class="form-group">
         <label for="NomeProduto">Produto</label>
-        <input type="text" class="form-control" placeholder="Digite o nome do produto!">
+        <input type="text" asp-for="NomeProduto" class="form-control" placeholder="Digite o nome do produto!">
 
     </div>
     <div class="form-group">
         <label for="ValorUnd">Valor</label>
-        <input type="text" class="form-control" placeholder="Digite o valor da unidade do produto!">
+        <input type="text" asp-for="ValorUnd" class="form-control" placeholder="Digite o valor da unidade do produto!">
 
     </div>
     <div class="form-group">
         <label for="Data">Data</label>
-        <input type="date" class="form-control" placeholder="Digite a data da verificação!">
+        <input type="date" asp-for="Data" class="form-control" placeholder="Digite a data da verificação!">
 
     </div>
     <div class="form-group">
         <label for="Mes">Mês</label>
-        <input type="text" class="form-control" placeholder="Digite o mês de verificação!">
+        <input type="text" asp-for="Mes"class="form-control" placeholder="Digite o mês de verificação!">
 
     </div>
     <button type="submit" class="btn btn-primary btn-block">Adicionar</button>

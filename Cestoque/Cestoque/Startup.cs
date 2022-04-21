@@ -29,6 +29,7 @@ namespace Cestoque
             services.AddEntityFrameworkSqlServer()
            .AddDbContext<BancoContext>(o=>o.UseSqlServer(Configuration.GetConnectionString("DataBase")));
             services.AddScoped<IEstoqueRepositorio,EstoqueRepositorio>();
+            services.AddScoped<IFornecedoresRepositorio, FornecedoresRepositorio>();
             
         }
 
