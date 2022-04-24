@@ -21,6 +21,15 @@ namespace Cestoque.Repositorio
             return fornecedor;
         }
 
+        public bool Apagar(int id)
+        {
+            FornecedoresModel fornecedorDb = ListarPorId(id);
+            if (fornecedorDb == null) throw new System.Exception("Houve um erro ao tentarmos apagar  o fornecedor!");
+            _Context.Fornecedores.Remove(fornecedorDb);
+            _Context.SaveChanges();
+            return true;
+        }
+
         public FornecedoresModel Atualizar(FornecedoresModel fornecedor)
         {
             FornecedoresModel fornecedorDb = ListarPorId(fornecedor.Id);
@@ -45,3 +54,4 @@ namespace Cestoque.Repositorio
         }
     }
 }
+

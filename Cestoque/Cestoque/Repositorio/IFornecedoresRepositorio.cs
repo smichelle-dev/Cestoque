@@ -14,6 +14,8 @@ namespace Cestoque.Repositorio
         FornecedoresModel ListarPorId(int id);
         FornecedoresModel Atualizar(FornecedoresModel fornecedor);
 
+        bool Apagar(int id);
+
 
     }
 }
