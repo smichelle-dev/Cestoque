@@ -392,3 +392,8 @@ D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Fornece
 D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Fornecedores\Criar.cshtml.g.cs
 D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Fornecedores\Editar.cshtml.g.cs
 D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Fornecedores\ApagarConfirmacao.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Logistica\Index.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Logistica\Apagar.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Logistica\Criar.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Logistica\Editar.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Cestas\Index.cshtml.g.cs

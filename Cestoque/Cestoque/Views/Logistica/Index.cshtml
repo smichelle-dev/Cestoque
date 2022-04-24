@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Listagem Logística";
+}
+
+<div class="text-center ">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Logistica" asp-action="Criar" >Adicionar gastos com logística</a>
+    </div>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Gasolina</th>
+                <th scope="col">Montagem</th>
+                <th scope="col">Embalagem</th>
+                <th scope="col">Flayers</th>
+                <th scope="col">Data</th>
+                <th scope="col">Mes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>50</td>
+                <td>60</td>
+                <td>20</td>
+                <td>5</td>
+                <td>22/01/2002</td>
+                <td>Fevereiro</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a role="button" class="btn btn-primary" asp-route-id="" asp-controller="" asp-action="">Editar</a>
+                        <a role="button" class="btn btn-danger" asp-route-id="" asp-controller="" asp-action="">Apagar</a>
+                    </div>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>

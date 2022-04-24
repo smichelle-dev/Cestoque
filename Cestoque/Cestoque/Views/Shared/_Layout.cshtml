@@ -9,9 +9,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Cestoque</a>
+                <a class="navbar-brand text-light"  asp-area="" asp-controller="Home" asp-action="Index">Cestoque</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,13 +28,16 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Fornecedores" asp-action="Index">Fornecedores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="MinhaCesta" asp-action="Privacy">Minha Cesta</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cestas" asp-action="Index">Minha Cesta</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Logistica" asp-action="Privacy">Logistica</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Logistica" asp-action="Index">Logística</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Financeiro" asp-action="Privacy">Financeiro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Financeiro" asp-action="Privacy">Configurações</a>
                         </li>
                     </ul>
                 </div>
