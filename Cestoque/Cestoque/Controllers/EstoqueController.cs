@@ -74,7 +74,7 @@ namespace Cestoque.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _estoqueRepositorio.Adicionar(estoque);
+                    estoque = _estoqueRepositorio.Adicionar(estoque);
                     TempData["MensagemSucesso"] = "Produto cadastro com sucesso!";
                     return RedirectToAction("Index");
                 }

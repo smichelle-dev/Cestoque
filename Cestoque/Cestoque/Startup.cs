@@ -30,7 +30,8 @@ namespace Cestoque
            .AddDbContext<BancoContext>(o=>o.UseSqlServer(Configuration.GetConnectionString("DataBase")));
             services.AddScoped<IEstoqueRepositorio,EstoqueRepositorio>();
             services.AddScoped<IFornecedoresRepositorio, FornecedoresRepositorio>();
-            
+            services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

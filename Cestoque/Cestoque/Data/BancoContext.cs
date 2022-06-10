@@ -18,6 +18,7 @@ namespace Cestoque.Data
 
         public DbSet<EstoqueModel> Estoque { get; set; }
         public DbSet<FornecedoresModel> Fornecedores { get; set; }
+        public DbSet<UsuarioModel> Usuarios { get; set; }
 
 
     }
