@@ -23,5 +23,9 @@ namespace Cestoque.Models
         public string Senha { get; set; }
         public DateTime DataDeCadastro { get; set; }
         public DateTime? DataDeAtualizacao { get; set; }
+        public bool SenhaValida(string senha)
+        {
+            return Senha == senha;
+        }
     }
 }

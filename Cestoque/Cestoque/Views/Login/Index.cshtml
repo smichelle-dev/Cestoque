@@ -1,0 +1,41 @@
+﻿
+@model LoginModel
+
+@{
+    Layout = "_LayoutDeslogado";
+    ViewData["Title"] = "Login";
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-primary btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<div class="card" style="width: 40rem;">
+    <img src="https://media.istockphoto.com/photos/shopping-basket-full-of-variety-of-grocery-products-food-and-drink-on-picture-id1319625327?b=1&k=20&m=1319625327&s=612x612&w=0&h=kpY8IGySeCyW5c_JN-OQkPR0XAE1YyzXH5TTYdf376I=" alt="Cesta Basica Vasconcelos N.1 Ouro" class="card-img-top" style="width: 300px" ;>
+    <div class="card-body">
+        <div>
+            <h1>Cestoque</h1>
+            <i class="bi bi-basket"></i>
+            <form asp-controller="Login" asp-action="Entrar" method="post">
+                <div>
+                    <label for="Login" class=" col-form-label">Login</label>
+                    <input type="text" asp-for="Login" class="form-control" id="login">
+                    @Html.ValidationMessageFor(x => x.Login)
+                </div>
+                <div>
+                    <label for="Senha" class=" col-form-label">Senha</label>
+                    <input type="password" asp-for="Senha" class="form-control" id="senha">
+                    @Html.ValidationMessageFor(x => x.Senha)
+                </div>
+                </br>
+                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
