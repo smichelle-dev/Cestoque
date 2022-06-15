@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cestoque.Helper
 {
-    interface ISessao
+     public interface ISessao
     {
 
         void CriarSessaoUsuario(UsuarioModel usuario);

@@ -403,3 +403,4 @@ D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Usuario
 D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Usuario\Editar.cshtml.g.cs
 D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
 D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Shared\_LayoutDeslogado.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Shared\Components\Menu\Default.cshtml.g.cs
