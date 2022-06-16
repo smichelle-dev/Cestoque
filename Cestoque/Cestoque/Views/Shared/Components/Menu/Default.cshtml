@@ -5,7 +5,7 @@
         aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
-<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between " >
+<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
     <ul class="navbar-nav flex-grow-1">
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Página Inicial</a>
@@ -22,20 +22,26 @@
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="" asp-controller="Logistica" asp-action="Index">Logística</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Financeiro" asp-action="Privacy">Financeiro</a>
-        </li>
+     
 
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Usuários</a>
-        </li>
-
+        @if (Model.Perfil == Cestoque.Enums.PerfilEnum.Admin)
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Usuários</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Financeiro" asp-action="Privacy">Financeiro</a>
+            </li>
+        }
         <div class="dropdown">
             <button class="btn btn-dark dropdown-toggle text-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Configurações </button>
-            
+
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" <li class="nav-item"><a class="nav-link text-success" asp-area="" asp-controller="Login" asp-action="Sair">Sair</a></li></a>
-        </div>  
+                <a class="dropdown-item"
+        <li class="nav-item"><a class="nav-link text-success" asp-area="" asp-controller="Login" asp-action="Sair">Sair</a></li></a>
+</div>
+            </div>
+
     </ul>
 </div>
 

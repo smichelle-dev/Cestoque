@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Cestoque.Filters;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cestoque.Controllers
 {
+    [PaginaUsuarioLogado]
     public class LogisticaController : Controller
     {
         public IActionResult Index()

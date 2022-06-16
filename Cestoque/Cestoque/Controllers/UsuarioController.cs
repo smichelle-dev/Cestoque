@@ -1,4 +1,5 @@
-﻿using Cestoque.Models;
+﻿using Cestoque.Filters;
+using Cestoque.Models;
 using Cestoque.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace Cestoque.Controllers
 {
+    [PaginaParaAdmin]
+    [PaginaUsuarioLogado]
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;

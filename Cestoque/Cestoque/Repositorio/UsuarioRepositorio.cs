@@ -18,6 +18,7 @@ namespace Cestoque.Repositorio
         {
             //grava no banco de dados
             Usuario.DataDeCadastro = DateTime.Now;
+            Usuario.SetSenhaHash();
             _bancoContext.Usuarios.Add(Usuario);
             _bancoContext.SaveChanges();
             return Usuario;

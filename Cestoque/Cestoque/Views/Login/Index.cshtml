@@ -6,14 +6,6 @@
     ViewData["Title"] = "Login";
 }
 
-@if (TempData["MensagemErro"] != null)
-{
-    <div class="alert alert-danger" role="alert">
-        <button type="button" class="btn btn-primary btn-sm close-alert" arial-label="Close">X</button>
-        @TempData["MensagemErro"]
-    </div>
-}
-
 <style>
     .container {
         width: 100vw;
@@ -37,17 +29,26 @@
         font-family: 'Roboto Mono', monospace;
     }
 
-    p{
-        font-size:3rem;
-        
-        text-align:center;
-        font-weight:bold;
-      
+    p {
+        font-size: 3rem;
+        text-align: center;
+        font-weight: bold;
+    }
+    .mensagemErro{
+       margin-top:70px;
     }
 </style>
 
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class=" mensagemErro alert alert-danger" role="alert">
+        <button type="button" class="btn btn-primary btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
 <div class="container ">
-    <div class="box shadow p-3 " >
+    <div class="box shadow p-3 ">
         <p class="align-text-top">Cestoque</p>
         <form asp-controller="Login" asp-action="Entrar" method="post">
             <div class="form-floating mb-3">
@@ -56,7 +57,7 @@
                 @Html.ValidationMessageFor(x => x.Login)
             </div>
             <div class="form-floating">
-                <input type="password" asp-for="Senha"  class="form-control" id="floatingPassword" placeholder="Senha">
+                <input type="password" asp-for="Senha" class="form-control" id="floatingPassword" placeholder="Senha">
 
                 @Html.ValidationMessageFor(x => x.Senha)
             </div>

@@ -1,4 +1,5 @@
 ﻿
+using Cestoque.Filters;
 using Cestoque.Models;
 using Cestoque.Repositorio;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Cestoque.Controllers
 {
+    [PaginaUsuarioLogado]
     public class FornecedoresController : Controller
     {
         private readonly IFornecedoresRepositorio _fornecedoresRepositorio;

@@ -1,4 +1,5 @@
-﻿using Cestoque.Models;
+﻿using Cestoque.Filters;
+using Cestoque.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Cestoque.Controllers
 {
+    [PaginaUsuarioLogado]
     public class HomeController : Controller
     {
 

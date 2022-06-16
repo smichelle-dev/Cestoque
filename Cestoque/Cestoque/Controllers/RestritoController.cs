@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Cestoque.Controllers
 {
-    [PaginaUsuarioLogado]
-    public class CestasController : Controller
+    public class RestritoController : Controller
     {
+        [PaginaUsuarioLogado]
         public IActionResult Index()
         {
             return View();
