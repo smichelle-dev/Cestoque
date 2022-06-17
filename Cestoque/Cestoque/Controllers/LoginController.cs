@@ -30,6 +30,11 @@ namespace Cestoque.Controllers
             return View();
         }
 
+        public IActionResult RedefinirSenha()
+        {
+
+           return View();
+        }
         public IActionResult Sair()
         {
             _sessao.RemoverSessaoUsuario();
@@ -67,5 +72,35 @@ namespace Cestoque.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+        [HttpPost] 
+        public IActionResult EnviarLinkParaEmail(RedefinirSenhaModel redefinirSenhaModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    UsuarioModel usuario = _usuarioRepositorio.BuscarPorEmailELogin(redefinirSenhaModel.Email, redefinirSenhaModel.Login);
+
+                    if (usuario != null)
+                    {
+                        string novaSenha = usuario.GerarNovaSenha();
+                        _usuarioRepositorio.Atualizar(usuario);
+                        TempData["MensagemSucesso"] = $"Enviamos uma nova senha para o e-mail cadastro!";
+                        return RedirectToAction("Index","Login");
+
+                    }
+                    TempData["MensagemErro"] = $"Não conseguimos redefinir a sua senha, verifique se os dados informados estão corretos!";
+                }
+
+                return View("Index");
+            }
+            catch (Exception erro)
+            {
+                TempData["MensagemErro"] = $"Não foi possivel redefinir a sua senha, tente novamente! Detalhe do erro:{erro.Message}";
+                return RedirectToAction("Index");
+            }
+        }
+
     }
 }

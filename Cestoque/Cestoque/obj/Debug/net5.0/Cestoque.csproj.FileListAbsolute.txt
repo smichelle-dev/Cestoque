@@ -405,3 +405,4 @@ D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Login\I
 D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Shared\_LayoutDeslogado.cshtml.g.cs
 D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Shared\Components\Menu\Default.cshtml.g.cs
 D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Restrito\Index.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Login\RedefinirSenha.cshtml.g.cs
