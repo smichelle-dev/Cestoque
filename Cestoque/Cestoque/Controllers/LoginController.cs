@@ -13,11 +13,13 @@ namespace Cestoque.Controllers
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
         private readonly ISessao _sessao;
+        private readonly IEmail _email;
         public LoginController(IUsuarioRepositorio usuarioRepositorio, 
-            ISessao sessao)
+            ISessao sessao, IEmail email)
         {
             _usuarioRepositorio = usuarioRepositorio;
             _sessao = sessao;
+            _email = email;
         }
 
 
@@ -84,9 +86,21 @@ namespace Cestoque.Controllers
 
                     if (usuario != null)
                     {
-                        string novaSenha = usuario.GerarNovaSenha();
-                        _usuarioRepositorio.Atualizar(usuario);
-                        TempData["MensagemSucesso"] = $"Enviamos uma nova senha para o e-mail cadastro!";
+                        string novaSenha = usuario.GerarNovaSenha();                    
+                        string mensagem = $"Olá, sua nova senha é:{novaSenha}";
+
+                       bool emailEnviado = _email.Enviar(usuario.Email,"Redefinição de senha Cestoque", mensagem );
+
+                        if (emailEnviado)
+                        {
+                            _usuarioRepositorio.Atualizar(usuario);
+                            TempData["MensagemSucesso"] = $"Enviamos uma nova senha para o e-mail cadastro!";
+                        }
+                        else
+                        {
+                            TempData["MensagemErro"] = $"Não conseguimos enviar o e-mail, tente novamente!";
+                        }
+                        
                         return RedirectToAction("Index","Login");
 
                     }
