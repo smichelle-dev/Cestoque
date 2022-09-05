@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Editar Cesta";
+}
+<div class="text-center">
+    <h4>Atualmente a Cesta One possui os itens abaixo: </h4>
+</div>
+
+<br />
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        Arroz
+        <span class="badge badge-warning badge-pill">2</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        Feijão
+        <span class="badge badge-warning badge-pill">3</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        Açucar
+        <span class="badge badge-warning badge-pill">4</span>
+    </li>
+</ul>
+<br />
+<h5>Valor da cesta: R$50,00</h5>
+<a class="btn btn-primary btn-block" role="button" asp-controller="CestaOne" asp-action="DarBaixaDoEstoque">Alterar</a>
+<a class="btn btn-danger btn-block" role="button" asp-controller="" asp-route-id="" asp-action="">Vender</a> 

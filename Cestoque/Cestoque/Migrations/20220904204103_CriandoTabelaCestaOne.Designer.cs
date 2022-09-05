@@ -4,44 +4,22 @@ using Cestoque.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Cestoque.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    partial class BancoContextModelSnapshot : ModelSnapshot
+    [Migration("20220904204103_CriandoTabelaCestaOne")]
+    partial class CriandoTabelaCestaOne
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Cestoque.Models.CestaFourModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("DataDeCadastro")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Produto")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Valor")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CestaFour");
-                });
 
             modelBuilder.Entity("Cestoque.Models.CestaOneModel", b =>
                 {
@@ -65,75 +43,6 @@ namespace Cestoque.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CestaOne");
-                });
-
-            modelBuilder.Entity("Cestoque.Models.CestaThreeModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("DataDeCadastro")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Produto")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Valor")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CestaThree");
-                });
-
-            modelBuilder.Entity("Cestoque.Models.CestaTwoModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("DataDeCadastro")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Produto")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Valor")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CestaTwo");
-                });
-
-            modelBuilder.Entity("Cestoque.Models.CestasModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Cesta")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DataDeCadastro")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("QuantidadeVendidas")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Cestas");
                 });
 
             modelBuilder.Entity("Cestoque.Models.EstoqueModel", b =>

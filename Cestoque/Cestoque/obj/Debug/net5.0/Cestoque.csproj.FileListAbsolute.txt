@@ -406,3 +406,9 @@ D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Shared\
 D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Shared\Components\Menu\Default.cshtml.g.cs
 D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Restrito\Index.cshtml.g.cs
 D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Login\RedefinirSenha.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\CestaFour\Index.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\CestaOne\Index.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\CestaThree\Index.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\CestaTwo\Index.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\Cestas\EditarItensCesta.cshtml.g.cs
+D:\dev-smichelle\Cestoque\Cestoque\Cestoque\obj\Debug\net5.0\Razor\Views\CestaOne\DarBaixaDoEstoque.cshtml.g.cs

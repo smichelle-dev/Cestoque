@@ -4,14 +4,16 @@ using Cestoque.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Cestoque.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    partial class BancoContextModelSnapshot : ModelSnapshot
+    [Migration("20220904212841_CriandoTabelaCestaFour")]
+    partial class CriandoTabelaCestaFour
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -113,27 +115,6 @@ namespace Cestoque.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CestaTwo");
-                });
-
-            modelBuilder.Entity("Cestoque.Models.CestasModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Cesta")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DataDeCadastro")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("QuantidadeVendidas")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Cestas");
                 });
 
             modelBuilder.Entity("Cestoque.Models.EstoqueModel", b =>

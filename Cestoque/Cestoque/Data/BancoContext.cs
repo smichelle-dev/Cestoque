@@ -19,6 +19,13 @@ namespace Cestoque.Data
         public DbSet<EstoqueModel> Estoque { get; set; }
         public DbSet<FornecedoresModel> Fornecedores { get; set; }
         public DbSet<UsuarioModel> Usuarios { get; set; }
+        public DbSet<CestaOneModel> CestaOne { get; set; }
+        public DbSet<CestaTwoModel> CestaTwo { get; set; }
+        public DbSet<CestaThreeModel> CestaThree { get; set; }
+        public DbSet<CestaFourModel> CestaFour { get; set; }
+        public DbSet<CestasModel> Cestas { get; set; }
+
+
 
 
     }

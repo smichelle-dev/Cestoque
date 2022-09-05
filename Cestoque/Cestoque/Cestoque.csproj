@@ -6,14 +6,34 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NovaPasta1\**" />
     <Compile Remove="NovaPasta2\**" />
     <Compile Remove="NovaPasta\**" />
+    <Compile Remove="Views\Cestas - Cópia\**" />
+    <Compile Remove="Views\NovaPasta1\**" />
+    <Compile Remove="Views\CestaOne\NovaPasta\**" />
+    <Compile Remove="Views\NovaPasta\**" />
+    <Content Remove="NovaPasta1\**" />
     <Content Remove="NovaPasta2\**" />
     <Content Remove="NovaPasta\**" />
+    <Content Remove="Views\Cestas - Cópia\**" />
+    <Content Remove="Views\NovaPasta1\**" />
+    <Content Remove="Views\CestaOne\NovaPasta\**" />
+    <Content Remove="Views\NovaPasta\**" />
+    <EmbeddedResource Remove="NovaPasta1\**" />
     <EmbeddedResource Remove="NovaPasta2\**" />
     <EmbeddedResource Remove="NovaPasta\**" />
+    <EmbeddedResource Remove="Views\Cestas - Cópia\**" />
+    <EmbeddedResource Remove="Views\NovaPasta1\**" />
+    <EmbeddedResource Remove="Views\CestaOne\NovaPasta\**" />
+    <EmbeddedResource Remove="Views\NovaPasta\**" />
+    <None Remove="NovaPasta1\**" />
     <None Remove="NovaPasta2\**" />
     <None Remove="NovaPasta\**" />
+    <None Remove="Views\Cestas - Cópia\**" />
+    <None Remove="Views\NovaPasta1\**" />
+    <None Remove="Views\CestaOne\NovaPasta\**" />
+    <None Remove="Views\NovaPasta\**" />
   </ItemGroup>
 
   <ItemGroup>
